@@ -19,7 +19,7 @@ $(CF):
 .PHONY: clean docker
 
 clean:
-	rm -f $(TARGETS)
+	rm -rf build
 
 docker:
 	docker build -t promissory-note .
