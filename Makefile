@@ -7,8 +7,8 @@ all: $(TARGETS)
 build:
 	mkdir build
 
-build/%.docx: promissory-note.cform signatures.json $(CF) build
-	$(CF) render -f docx -n outline -t "Promissory Note" -s signatures.json promissory-note.cform > $@
+build/%.docx: promissory-note.cform blanks.json signatures.json $(CF) build
+	$(CF) render -f docx -n outline -t "Promissory Note" -b blanks.json -s signatures.json promissory-note.cform > $@
 
 build/%.pdf: build/%.docx
 	doc2pdf $<
